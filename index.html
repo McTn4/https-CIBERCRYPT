@@ -1,89 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CIBERCRYPT — Noticias y Mercado</title>
-  <meta name="google-site-verification" content="3sojXptK_3sYVOMADiXDWp1bmG8nTuoW4AGQwQdgO7s" />
-  <meta name="description" content="CIBERCRYPT: noticias de criptomonedas, bolsa y tendencias del mercado financiero.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">CIBERCRYPT</h1>
-      <nav>
-        <a href="#noticias">Noticias</a>
-        <a href="#mercado">Mercado</a>
-        <a href="#bolsa">Bolsa</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="container">
-        <h2>Criptomonedas y Finanzas al instante</h2>
-        <p>Noticias actualizadas sobre Bitcoin, Ethereum, acciones y el mercado global.</p>
-        <a href="#noticias" class="btn">Ver últimas noticias</a>
-      </div>
+  <!-- Botón hamburguesa para móvil -->
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h1>CIBERCRYPT</h1>
+    <a href="#inicio">Inicio</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#mercado">Mercado</a>
+    <a href="#bolsa">Bolsa</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <section id="inicio">
+      <h2>Bienvenido a CIBERCRYPT</h2>
+      <p>Tu portal de noticias de criptomonedas y mercados financieros actualizado al instante.</p>
     </section>
 
-    <section id="noticias" class="container">
+    <section id="noticias">
       <h2>Últimas Noticias</h2>
       <article>
         <h3>Bitcoin supera los 30.000 USD</h3>
         <p>El mercado reacciona positivamente tras los anuncios de la Reserva Federal...</p>
-        <a href="#">Leer más</a>
+        <a href="#" class="btn">Leer más</a>
       </article>
       <article>
         <h3>Ethereum y la transición a 2.0</h3>
         <p>El nuevo modelo de staking sigue atrayendo inversores institucionales...</p>
-        <a href="#">Leer más</a>
+        <a href="#" class="btn">Leer más</a>
       </article>
     </section>
 
     <section id="mercado" class="container">
-      <h2>Mercado en vivo</h2>
-      <p>Aquí puedes integrar widgets o gráficas con precios de criptos y bolsa.</p>
+  <h2>Mercado en vivo 🌐</h2>
+  <table border="1" cellpadding="10" cellspacing="0" style="width:100%; text-align:center; background:#111; color:#fff; border-collapse:collapse;">
+    <thead style="background:#222;">
+      <tr>
+        <th>Activo</th>
+        <th>Precio (USD)</th>
+        <th>Cambio 24h</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-mercado">
+      <tr><td colspan="3">Cargando datos...</td></tr>
+    </tbody>
+  </table>
+</section>
 
-      <!-- 🟢 Bloque de precios en tiempo real -->
-      <div id="precios" style="color:white; font-family:Arial; margin:20px 0;">
-        <h3>📈 Precio en tiempo real</h3>
-        <p id="btc-price">Cargando BTC...</p>
-        <p id="eth-price">Cargando ETH...</p>
-      </div>
-    </section>
 
-    <section id="bolsa" class="container">
+    <section id="bolsa">
       <h2>Bolsa de valores</h2>
       <p>Indicadores bursátiles globales, índices y análisis del mercado.</p>
     </section>
-  </main>
 
-  <footer id="contacto">
-    <div class="container">
+    <section id="contacto">
+      <h2>Contacto</h2>
       <p>© <span id="year"></span> CIBERCRYPT — Noticias del mercado y criptomonedas</p>
-    </div>
-  </footer>
-
-  
-  <script>
-    async function cargarPrecios() {
-      try {
-        const respuesta = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd");
-        const data = await respuesta.json();
-        document.getElementById("btc-price").innerText = "Bitcoin (BTC): $" + data.bitcoin.usd;
-        document.getElementById("eth-price").innerText = "Ethereum (ETH): $" + data.ethereum.usd;
-      } catch (error) {
-        console.error("Error al obtener datos:", error);
-      }
-    }
-    setInterval(cargarPrecios, 10000); // cada 10 seg
-    cargarPrecios();
-  </script>
+    </section>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
 </html>
+
