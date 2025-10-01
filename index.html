@@ -47,6 +47,13 @@
     <section id="mercado" class="container">
       <h2>Mercado en vivo</h2>
       <p>Aquí puedes integrar widgets o gráficas con precios de criptos y bolsa.</p>
+
+      <!-- 🟢 Bloque de precios en tiempo real -->
+      <div id="precios" style="color:white; font-family:Arial; margin:20px 0;">
+        <h3>📈 Precio en tiempo real</h3>
+        <p id="btc-price">Cargando BTC...</p>
+        <p id="eth-price">Cargando ETH...</p>
+      </div>
     </section>
 
     <section id="bolsa" class="container">
@@ -60,6 +67,22 @@
       <p>© <span id="year"></span> CIBERCRYPT — Noticias del mercado y criptomonedas</p>
     </div>
   </footer>
+
+  
+  <script>
+    async function cargarPrecios() {
+      try {
+        const respuesta = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd");
+        const data = await respuesta.json();
+        document.getElementById("btc-price").innerText = "Bitcoin (BTC): $" + data.bitcoin.usd;
+        document.getElementById("eth-price").innerText = "Ethereum (ETH): $" + data.ethereum.usd;
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+      }
+    }
+    setInterval(cargarPrecios, 10000); // cada 10 seg
+    cargarPrecios();
+  </script>
 
   <script src="js/main.js"></script>
 </body>
