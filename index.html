@@ -31,40 +31,55 @@
       <a href="#noticias" class="btn">Ver últimas noticias</a>
     </section>
 
-    <section id="noticias">
-      <h2>Últimas Noticias</h2>
-      <article>
-        <h3>Bitcoin supera los 30.000 USD</h3>
-        <p>El mercado reacciona positivamente tras los anuncios de la Reserva Federal...</p>
-        <a href="#">Leer más</a>
-      </article>
-      <article>
-        <h3>Ethereum y la transición a 2.0</h3>
-        <p>El nuevo modelo de staking sigue atrayendo inversores institucionales...</p>
-        <a href="#">Leer más</a>
-      </article>
-    </section>
+   
 
-    <section id="mercado">
-      <h2>Mercado en vivo 🌐</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Activo</th>
-            <th>Precio (USD)</th>
-            <th>Cambio 24h</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-mercado">
-          <tr><td colspan="3">Cargando datos...</td></tr>
-        </tbody>
-      </table>
-    </section>
+   <section id="mercado" class="container">
+  <h2>Mercado en vivo 🌐</h2>
+
+  <!-- Tabla Criptomonedas -->
+  <h3>Criptomonedas</h3>
+  <table style="width:100%; text-align:center; background:#111; color:#fff; border-collapse:collapse;">
+    <thead style="background:#222;">
+      <tr>
+        <th>Activo</th>
+        <th>Precio (USD)</th>
+        <th>Cambio 24h</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-criptos">
+      <tr><td colspan="3">Cargando criptos...</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Tabla Empresas -->
+  <h3>Empresas</h3>
+  <table style="width:100%; text-align:center; background:#111; color:#fff; border-collapse:collapse;">
+    <thead style="background:#222;">
+      <tr>
+        <th>Empresa</th>
+        <th>Precio (USD)</th>
+        <th>Cambio 24h</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-empresas">
+      <tr><td colspan="3">Cargando empresas...</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
 
     <section id="bolsa">
       <h2>Bolsa de valores</h2>
       <p>Indicadores bursátiles globales, índices y análisis del mercado.</p>
     </section>
+	
+	<section id="noticias" class="container">
+  <h2>Últimas Noticias 📰</h2>
+  <div id="lista-noticias">
+    <p>Cargando noticias...</p>
+  </div>
+</section>
   </main>
 
   <footer id="contacto">
