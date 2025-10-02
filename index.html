@@ -8,84 +8,81 @@
 </head>
 <body>
 
-  <!-- Sidebar / menú hamburguesa -->
-  <aside id="sidebar">
-    <div class="logo">CIBERCRYPT</div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#noticias">Noticias</a>
-      <a href="#mercado">Mercado</a>
-      <a href="#bolsa">Bolsa</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </aside>
-
-  <!-- Botón hamburguesa -->
-  <button id="hamburger">&#9776;</button>
-
-  <!-- Contenido principal -->
-  <main>
-    <section id="inicio" class="hero">
-      <h2>Criptomonedas y Finanzas al instante</h2>
-      <p>Noticias actualizadas sobre Bitcoin, Ethereum, acciones y el mercado global.</p>
-      <a href="#noticias" class="btn">Ver últimas noticias</a>
-    </section>
-
-   
-
-   <section id="mercado" class="container">
-  <h2>Mercado en vivo 🌐</h2>
-
-  <!-- Tabla Criptomonedas -->
-  <h3>Criptomonedas</h3>
-  <table style="width:100%; text-align:center; background:#111; color:#fff; border-collapse:collapse;">
-    <thead style="background:#222;">
-      <tr>
-        <th>Activo</th>
-        <th>Precio (USD)</th>
-        <th>Cambio 24h</th>
-      </tr>
-    </thead>
-    <tbody id="tabla-criptos">
-      <tr><td colspan="3">Cargando criptos...</td></tr>
-    </tbody>
-  </table>
-
-  <!-- Tabla Empresas -->
-  <h3>Empresas</h3>
-  <table style="width:100%; text-align:center; background:#111; color:#fff; border-collapse:collapse;">
-    <thead style="background:#222;">
-      <tr>
-        <th>Empresa</th>
-        <th>Precio (USD)</th>
-        <th>Cambio 24h</th>
-      </tr>
-    </thead>
-    <tbody id="tabla-empresas">
-      <tr><td colspan="3">Cargando empresas...</td></tr>
-    </tbody>
-  </table>
-</section>
-
-
-
-    <section id="bolsa">
-      <h2>Bolsa de valores</h2>
-      <p>Indicadores bursátiles globales, índices y análisis del mercado.</p>
-    </section>
-	
-	<section id="noticias" class="container">
-  <h2>Últimas Noticias 📰</h2>
-  <div id="lista-noticias">
-    <p>Cargando noticias...</p>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h1>CIBERCRYPT</h1>
+    </div>
+    <button class="tab-btn active" data-tab="inicio">Inicio</button>
+    <button class="tab-btn" data-tab="mercado">Mercado</button>
+    <button class="tab-btn" data-tab="noticias">Noticias</button>
   </div>
-</section>
-  </main>
 
-  <footer id="contacto">
-    <p>© <span id="year"></span> CIBERCRYPT — Noticias del mercado y criptomonedas</p>
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Inicio -->
+    <section id="inicio" class="tab-content active">
+      <h2>Bienvenido a CIBERCRYPT</h2>
+      <p>Noticias y mercado financiero al instante.</p>
+    </section>
+
+    <!-- Mercado -->
+    <section id="mercado" class="tab-content">
+      <h2>Criptomonedas 🌐</h2>
+      <table id="tabla-criptos">
+        <thead>
+          <tr>
+            <th>Activo</th>
+            <th>Precio (USD)</th>
+            <th>Cambio 24h</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3">Cargando...</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Empresas 📈</h2>
+      <table id="tabla-empresas">
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Precio (USD)</th>
+            <th>Cambio 24h</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3">Cargando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Detalle activo -->
+    <section id="detalle-activo" class="tab-content">
+      <button id="volver" class="btn-volver">← Volver al Mercado</button>
+      <h2 id="detalle-nombre">Activo</h2>
+      <p id="detalle-precio">Precio: $0</p>
+      <p id="detalle-cambio">Cambio 24h: 0%</p>
+
+      <canvas id="grafica-activo" width="400" height="200"></canvas>
+
+      <h3>Noticias relacionadas</h3>
+      <div id="noticias-relacionadas">Cargando noticias...</div>
+    </section>
+
+    <!-- Noticias -->
+    <section id="noticias" class="tab-content">
+      <h2>Noticias Internacionales</h2>
+      <div id="lista-noticias">Cargando noticias...</div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> CIBERCRYPT</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
