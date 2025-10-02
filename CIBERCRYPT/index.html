@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIBERCRYPT — Noticias y Mercado</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h1>CIBERCRYPT</h1>
+    </div>
+    <button class="tab-btn active" data-tab="inicio">Inicio</button>
+    <button class="tab-btn" data-tab="mercado">Mercado</button>
+    <button class="tab-btn" data-tab="noticias">Noticias</button>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Inicio -->
+    <section id="inicio" class="tab-content active">
+      <h2>Bienvenido a CIBERCRYPT</h2>
+      <p>Noticias y mercado financiero al instante.</p>
+    </section>
+
+    <!-- Mercado -->
+    <section id="mercado" class="tab-content">
+      <h2>Criptomonedas 🌐</h2>
+      <table id="tabla-criptos">
+        <thead>
+          <tr>
+            <th>Activo</th>
+            <th>Precio (USD)</th>
+            <th>Cambio 24h</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3">Cargando...</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Empresas 📈</h2>
+      <table id="tabla-empresas">
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Precio (USD)</th>
+            <th>Cambio 24h</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3">Cargando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Detalle activo -->
+    <section id="detalle-activo" class="tab-content">
+      <button id="volver" class="btn-volver">← Volver al Mercado</button>
+      <h2 id="detalle-nombre">Activo</h2>
+      <p id="detalle-precio">Precio: $0</p>
+      <p id="detalle-cambio">Cambio 24h: 0%</p>
+
+      <canvas id="grafica-activo" width="400" height="200"></canvas>
+
+      <h3>Noticias relacionadas</h3>
+      <div id="noticias-relacionadas">Cargando noticias...</div>
+    </section>
+
+    <!-- Noticias -->
+    <section id="noticias" class="tab-content">
+      <h2>Noticias Internacionales</h2>
+      <div id="lista-noticias">Cargando noticias...</div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> CIBERCRYPT</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
